@@ -1,14 +1,8 @@
 "use client";
 
-import { signIn } from "next-auth/react";
-
 export default function AuthStep({ onAuth }) {
   const handleGoogleSignIn = () => {
-    signIn("google", { redirect: false }).then((result) => {
-      if (result && !result.error) {
-        onAuth();
-      }
-    });
+    onAuth();
   };
 
   return (
