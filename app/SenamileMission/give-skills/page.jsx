@@ -52,7 +52,7 @@ export default function GiveSkillsPage() {
   };
 
   const handleDone = () => {
-    router.push("/SenamileMission");
+    router.push("/dashboard/contributions");
   };
 
   const totalSteps = 3;

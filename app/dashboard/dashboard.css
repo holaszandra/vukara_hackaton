@@ -303,6 +303,13 @@
   justify-content: center;
   flex-shrink: 0;
 }
+.db-activity-icon--amber {
+  background: rgba(245, 158, 11, 0.1);
+}
+.db-activity-icon--amber svg {
+  color: #F59E0B;
+  fill: none;
+}
 .db-activity-icon svg {
   width: 20px;
   height: 20px;
@@ -340,6 +347,11 @@
   border-radius: 20px;
   padding: 3px 10px;
   text-transform: capitalize;
+}
+.db-activity-badge--pending {
+  color: #F59E0B;
+  background: rgba(245, 158, 11, 0.08);
+  border-color: rgba(245, 158, 11, 0.25);
 }
 
 .db-activity-date {

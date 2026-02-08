@@ -1,40 +1,22 @@
 "use client";
 
-import { useSession, signOut } from "next-auth/react";
-import { useRouter, usePathname } from "next/navigation";
-import { useEffect } from "react";
+import { usePathname, useRouter } from "next/navigation";
 import Link from "next/link";
 import "./dashboard.css";
 
 export default function DashboardLayout({ children }) {
-  const { data: session, status } = useSession();
-  const router = useRouter();
   const pathname = usePathname();
-
-  useEffect(() => {
-    if (status === "unauthenticated") {
-      router.push("/SenamileMission/donate");
-    }
-  }, [status, router]);
-
-  if (status === "loading") {
-    return (
-      <div className="db-page">
-        <div className="db-loading">
-          <div className="db-loading-spinner" />
-          <p>Loading...</p>
-        </div>
-      </div>
-    );
-  }
-
-  if (!session) return null;
+  const router = useRouter();
 
   const navItems = [
     { label: "My Profile", href: "/dashboard/profile" },
     { label: "My Donations", href: "/dashboard/donations" },
     { label: "My Contributions", href: "/dashboard/contributions" },
   ];
+
+  const handleLogout = () => {
+    router.push("/");
+  };
 
   return (
     <div className="db-page">
@@ -69,7 +51,7 @@ export default function DashboardLayout({ children }) {
             ))}
             <button
               className="db-nav-link db-nav-logout"
-              onClick={() => signOut({ callbackUrl: "/" })}
+              onClick={handleLogout}
             >
               Log Out
             </button>
