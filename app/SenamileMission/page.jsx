@@ -2,6 +2,7 @@
 
 import { useRef, useEffect, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import "./senamile.css";
 // DonationModal import removed — donation now uses full-page flow
 
@@ -67,12 +68,14 @@ export default function SenamileMission() {
           {/* Profile Image */}
           <div className="profile-col">
             <div className="profile-img">
-              <div className="profile-placeholder">
-                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" opacity="0.3">
-                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
-                  <circle cx="12" cy="7" r="4" />
-                </svg>
-              </div>
+              <Image
+                src="/images/senamile-profile.png"
+                alt="Senamile Zungu"
+                width={180}
+                height={180}
+                className="profile-photo"
+                priority
+              />
             </div>
           </div>
 
