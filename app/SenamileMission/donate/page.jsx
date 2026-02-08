@@ -800,6 +800,16 @@ export default function DonatePage() {
               </>
             )}
 
+            {/* ── Back Home CTA (guest flow) ── */}
+            {successContent.showSignUpCTA && (
+              <button
+                className="dn-cta-btn dn-cta-btn--donations"
+                onClick={() => router.push("/")}
+              >
+                Back Home &nbsp;&rarr;
+              </button>
+            )}
+
             {/* ── Footer ── */}
             <p className="dn-footer-quote">
               We create pathways where there are none.
